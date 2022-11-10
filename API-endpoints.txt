@@ -31,7 +31,7 @@ POST : http://localhost:5000/api/users
     Input JSON: 
     {
         "name": "Rajib",
-        "email": "rajib@capitalnumbers.com",
+        "email": "rajib@cccc.com",
         "pwd": "123456",
         "pwd_reset_token": null
     }
@@ -50,8 +50,8 @@ PUT : http://localhost:5000/api/users
     Input JSON: 
     {
         "userpkid": "636b4d94d9a79849cc9de924",
-        "email": "diptesh@capitalnumbers.com",
-        "name": "Diptesh Dayanand Nayak",
+        "email": "diptesh@mmmmm.com",
+        "name": "Diptesh D",
         "pwd_reset_token": null
     }
     Output JSON on success:
