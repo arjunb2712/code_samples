@@ -1,0 +1,80 @@
+
+
+GET : http://localhost:5000/api/users
+    Input JSON: N/A
+    Output JSON on success:
+    {
+        "data": [{....}, {....}, ....]
+        "status": 1,
+        "message": "n number of records found!"
+    }        
+    Output JSON on failure:
+    {
+        "status": 0,
+        "message": "No records found!"
+    }
+
+GET : http://localhost:5000/api/users/1
+    Input JSON: N/A
+    Output JSON on success:
+    {
+        "data": {....},
+        "status": 1
+    }        
+    Output JSON on failure:
+    {
+        "status": 0,
+        "message": "No records found!"
+    }
+                
+POST : http://localhost:5000/api/users
+    Input JSON: 
+    {
+        "name": "Rajib",
+        "email": "rajib@capitalnumbers.com",
+        "pwd": "123456",
+        "pwd_reset_token": null
+    }
+    Output JSON on success:
+    {
+        "status": 1,
+        "message": "Record added successfully!"
+    }        
+    Output JSON on failure:
+    {
+        "status": 0,
+        "message": "Record addition failed!"
+    }        
+        
+PUT : http://localhost:5000/api/users
+    Input JSON: 
+    {
+        "userpkid": "636b4d94d9a79849cc9de924",
+        "email": "diptesh@capitalnumbers.com",
+        "name": "Diptesh Dayanand Nayak",
+        "pwd_reset_token": null
+    }
+    Output JSON on success:
+    {
+        "status": 1,
+        "message": "Record updated successfully!"
+    }        
+    Output JSON on failure:
+    {
+        "status": 0,
+        "message": "Record updation failed!"
+    }        
+        
+DELETE : http://localhost:5000/api/users/1
+    Input JSON: N/A
+    Output JSON on success:
+    {
+        "status": 1,
+        "message": "Record deleted successfully!"
+    }        
+    Output JSON on failure:
+    {
+        "status": 0,
+        "message": "Record deletion failed!"
+    }        
+        

@@ -1,0 +1,92 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 210 (class 1259 OID 16411)
+-- Name: demo__users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.demo__users (
+    userPkId bigint NOT NULL,
+    name character varying(50) NOT NULL,
+    email character varying(50) NOT NULL,
+    pwd character varying(255) NOT NULL,
+    pwd_reset_token character varying(255)
+);
+ALTER TABLE public.demo__users OWNER TO postgres;
+
+--
+-- TOC entry 209 (class 1259 OID 16410)
+-- Name: demo__users_userPkId_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.demo__users_userPkId_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+ALTER TABLE public.demo__users_userPkId_seq OWNER TO postgres;
+
+--
+-- TOC entry 3339 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: demo__users_userPkId_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.demo__users_userPkId_seq OWNED BY public.demo__users.userPkId;
+
+
+
+--
+-- TOC entry 3174 (class 2604 OID 16414)
+-- Name: demo__users userPkId; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.demo__users ALTER COLUMN userPkId SET DEFAULT nextval('public.demo__users_userPkId_seq'::regclass);
+
+
+--
+-- TOC entry 3327 (class 0 OID 16411)
+-- Dependencies: 210
+-- Data for Name: demo__users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.demo__users (userPkId, name, email, pwd, pwd_reset_token) FROM stdin;
+1	Rajib	rajib@yopmail.com	$2a$10$taPZQ7CBazhqh9Cc0cFwi.5HklIAWdVlg8eFbEcXEl.BpA/pk9Jcu	\N
+2	rahul	rahul@yopmail.com	$2a$10$1Wsm6au70T9QErlypkwy9.QgP1uuwNb9UKrE8ZkDElZO4YpMc.7t2	\N
+\.
+
+
+--
+-- TOC entry 3342 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: demo__users_userPkId_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.demo__users_userPkId_seq', 2, true);
+
+--
+-- TOC entry 3179 (class 2606 OID 16418)
+-- Name: demo__users demo__users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.demo__users
+    ADD CONSTRAINT demo__users_pkey PRIMARY KEY (userPkId);
+
